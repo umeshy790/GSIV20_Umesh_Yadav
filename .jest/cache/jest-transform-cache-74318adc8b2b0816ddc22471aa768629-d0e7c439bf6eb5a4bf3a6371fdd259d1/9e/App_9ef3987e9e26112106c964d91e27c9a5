@@ -1,0 +1,27 @@
+b8889a990649e65c25288b0959999090
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactNative = require("react-native");
+
+var _UpcomingMovies = _interopRequireDefault(require("./src/components/UpcomingMovies"));
+
+var _reactRedux = require("react-redux");
+
+var _store = require("./src/store");
+
+var App = function App() {
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactNative.SafeAreaView, null, _react.default.createElement(_reactRedux.Provider, {
+    store: _store.store
+  }, _react.default.createElement(_UpcomingMovies.default, null))));
+};
+
+var _default = App;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkFwcC50c3giXSwibmFtZXMiOlsiQXBwIiwic3RvcmUiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFRQTs7QUFDQTs7QUFDQTs7QUFDQTs7QUFDQTs7QUFFQSxJQUFNQSxHQUFhLEdBQUcsU0FBaEJBLEdBQWdCO0FBQUEsU0FDcEIsNERBQ0UsNkJBQUMseUJBQUQsUUFDRSw2QkFBQyxvQkFBRDtBQUFVLElBQUEsS0FBSyxFQUFFQztBQUFqQixLQUNFLDZCQUFDLHVCQUFELE9BREYsQ0FERixDQURGLENBRG9CO0FBQUEsQ0FBdEI7O2VBVWVELEciLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIFNhbXBsZSBSZWFjdCBOYXRpdmUgQXBwXG4gKiBodHRwczovL2dpdGh1Yi5jb20vZmFjZWJvb2svcmVhY3QtbmF0aXZlXG4gKlxuICogQGZvcm1hdFxuICogQGZsb3cgc3RyaWN0LWxvY2FsXG4gKi9cblxuaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7U2FmZUFyZWFWaWV3fSBmcm9tICdyZWFjdC1uYXRpdmUnO1xuaW1wb3J0IFVwY29taW5nTW92aWVzIGZyb20gJy4vc3JjL2NvbXBvbmVudHMvVXBjb21pbmdNb3ZpZXMnO1xuaW1wb3J0IHtQcm92aWRlcn0gZnJvbSAncmVhY3QtcmVkdXgnO1xuaW1wb3J0IHtzdG9yZX0gZnJvbSAnLi9zcmMvc3RvcmUnO1xuXG5jb25zdCBBcHA6IFJlYWN0LkZDID0gKCkgPT4gKFxuICA8PlxuICAgIDxTYWZlQXJlYVZpZXc+XG4gICAgICA8UHJvdmlkZXIgc3RvcmU9e3N0b3JlfT5cbiAgICAgICAgPFVwY29taW5nTW92aWVzIC8+XG4gICAgICA8L1Byb3ZpZGVyPlxuICAgIDwvU2FmZUFyZWFWaWV3PlxuICA8Lz5cbik7XG5cbmV4cG9ydCBkZWZhdWx0IEFwcDtcbiJdfQ==
