@@ -9,15 +9,17 @@ import {
 } from '../types/types';
 import {Movie} from '../modal/modals';
 
-export const requestUpcomingMoviesAction = (): AppActionsType => ({
+export const requestUpcomingMoviesAction = (page: number): AppActionsType => ({
   type: REQUEST_UPCOMING_MOVIES_ACTION,
+  page: page,
 });
 
-export const requestUpcomingMoviesSuccessAction = (
-  data: Movie[],
-): AppActionsType => ({
+export const requestUpcomingMoviesSuccessAction = (payload: {
+  data: Movie[];
+  isFetchedMore: boolean;
+}): AppActionsType => ({
   type: REQUEST_UPCOMING_MOVIES_SUCCESS_ACTION,
-  data: data,
+  payload: payload,
 });
 
 export const requestUpcomingMoviesFailedAction = (

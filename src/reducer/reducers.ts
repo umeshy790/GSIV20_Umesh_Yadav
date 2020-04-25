@@ -6,6 +6,8 @@ import {
   REQUEST_MOVIE_DETAILS_FAILED_ACTION,
   DetailMovieState,
   REQUEST_UPCOMING_MOVIES_ACTION,
+  REQUEST_UPCOMING_MOVIES_SUCCESS_ACTION,
+  REQUEST_UPCOMING_MOVIES_FAILED_ACTION,
 } from '../types/types';
 
 const initialMovieListState: MovieListState = {
@@ -21,27 +23,29 @@ const initialDetailMovieState: DetailMovieState = {
 };
 
 export function movieListReducer(
-  state = initialDetailMovieState,
+  state = initialMovieListState,
   action: AppActionsType,
 ) {
   switch (action.type) {
     case REQUEST_UPCOMING_MOVIES_ACTION: {
       return {
         ...state,
-        loading: true,
+        loading: action.page === 1,
         error: null,
       };
     }
 
-    case REQUEST_MOVIE_DETAILS_SUCCESS_ACTION: {
+    case REQUEST_UPCOMING_MOVIES_SUCCESS_ACTION: {
       return {
         ...state,
         loading: false,
-        movies: action.data,
+        movies: action.payload.isFetchedMore
+          ? [...state.movies, ...action.payload.data]
+          : action.payload.data,
       };
     }
 
-    case REQUEST_MOVIE_DETAILS_FAILED_ACTION: {
+    case REQUEST_UPCOMING_MOVIES_FAILED_ACTION: {
       return {
         ...state,
         loading: false,
@@ -56,7 +60,7 @@ export function movieListReducer(
 }
 
 export function movieDetailReducer(
-  state = initialMovieListState,
+  state = initialDetailMovieState,
   action: AppActionsType,
 ) {
   switch (action.type) {
@@ -65,6 +69,7 @@ export function movieDetailReducer(
         ...state,
         loading: true,
         error: null,
+        movie: null,
       };
     }
 

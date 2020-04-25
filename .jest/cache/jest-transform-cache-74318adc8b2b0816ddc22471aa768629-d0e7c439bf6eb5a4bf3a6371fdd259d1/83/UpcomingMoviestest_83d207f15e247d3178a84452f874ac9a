@@ -1,0 +1,17 @@
+b8566f93ed1b9c248e3afb1ffac56e45
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+require("react-native");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
+
+var _UpcomingMovies = _interopRequireDefault(require("../src/components/UpcomingMovies"));
+
+test('renders correctly', function () {
+  var tree = _reactTestRenderer.default.create(_react.default.createElement(_UpcomingMovies.default, null));
+
+  expect(tree).toBeDefined();
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlVwY29taW5nTW92aWVzLXRlc3QudHN4Il0sIm5hbWVzIjpbInRlc3QiLCJ0cmVlIiwicmVuZGVyZXIiLCJjcmVhdGUiLCJleHBlY3QiLCJ0b0JlRGVmaW5lZCJdLCJtYXBwaW5ncyI6Ijs7QUFBQTs7QUFDQTs7QUFHQTs7QUFDQTs7QUFFQUEsSUFBSSxDQUFDLG1CQUFELEVBQXNCLFlBQU07QUFDOUIsTUFBTUMsSUFBSSxHQUFHQywyQkFBU0MsTUFBVCxDQUFnQiw2QkFBQyx1QkFBRCxPQUFoQixDQUFiOztBQUNBQyxFQUFBQSxNQUFNLENBQUNILElBQUQsQ0FBTixDQUFhSSxXQUFiO0FBQ0QsQ0FIRyxDQUFKIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICdyZWFjdC1uYXRpdmUnO1xuaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcblxuLy8gTm90ZTogdGVzdCByZW5kZXJlciBtdXN0IGJlIHJlcXVpcmVkIGFmdGVyIHJlYWN0LW5hdGl2ZS5cbmltcG9ydCByZW5kZXJlciBmcm9tICdyZWFjdC10ZXN0LXJlbmRlcmVyJztcbmltcG9ydCBVcGNvbWluZ01vdmllcyBmcm9tICcuLi9zcmMvY29tcG9uZW50cy9VcGNvbWluZ01vdmllcyc7XG5cbnRlc3QoJ3JlbmRlcnMgY29ycmVjdGx5JywgKCkgPT4ge1xuICBjb25zdCB0cmVlID0gcmVuZGVyZXIuY3JlYXRlKDxVcGNvbWluZ01vdmllcyAvPik7XG4gIGV4cGVjdCh0cmVlKS50b0JlRGVmaW5lZCgpO1xufSk7XG4iXX0=

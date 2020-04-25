@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component tests Movie Card Test shoul match to snapShot 1`] = `
+<View
+  accessible={true}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "borderColor": "transparent",
+      "borderWidth": 12,
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#dfdfdf",
+        "borderRadius": 20,
+        "elevation": 6,
+        "flex": 1,
+        "height": 290,
+        "shadowColor": "#000",
+        "shadowOffset": Object {
+          "height": 3,
+          "width": 0,
+        },
+        "shadowOpacity": 0.23,
+        "shadowRadius": 3.42,
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": "http://image.tmdb.org/t/p/originalfjfjd",
+        }
+      }
+      style={
+        Object {
+          "borderTopLeftRadius": 20,
+          "borderTopRightRadius": 20,
+          "height": 200,
+          "width": undefined,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "paddingHorizontal": 8,
+          "paddingTop": 5,
+        }
+      }
+    >
+      <Text
+        ellipsizeMode="tail"
+        numberOfLines={1}
+        style={
+          Object {
+            "color": "#4285f4",
+            "flex": 1,
+            "fontSize": 16,
+            "fontWeight": "500",
+          }
+        }
+      >
+        dummy
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#4a4a4a",
+            "fontSize": 15,
+            "fontWeight": "500",
+          }
+        }
+      >
+        (
+        1212
+        )
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingHorizontal": 8,
+          "paddingVertical": 5,
+        }
+      }
+    >
+      <Text
+        ellipsizeMode="tail"
+        numberOfLines={2}
+        style={
+          Object {
+            "color": "#4a4a4a",
+            "fontSize": 14,
+          }
+        }
+      >
+        121
+      </Text>
+    </View>
+  </View>
+</View>
+`;

@@ -26,11 +26,15 @@ export const REQUEST_MOVIE_DETAILS_FAILED_ACTION =
 
 interface RequestUpcomingMoviesAction {
   type: typeof REQUEST_UPCOMING_MOVIES_ACTION;
+  page: number;
 }
 
 interface RequestUpcomingMoviesSuccessAction {
   type: typeof REQUEST_UPCOMING_MOVIES_SUCCESS_ACTION;
-  data: Movie[];
+  payload: {
+    data: Movie[];
+    isFetchedMore: boolean;
+  };
 }
 
 interface RequestUpcomingMoviesFailedAction {

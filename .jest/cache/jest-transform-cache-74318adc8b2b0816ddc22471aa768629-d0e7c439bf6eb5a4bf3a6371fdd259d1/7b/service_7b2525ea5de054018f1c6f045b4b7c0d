@@ -1,0 +1,16 @@
+0070ea2f2a1a0da87fece80242607674
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getUpcomingMovies = void 0;
+
+var getUpcomingMovies = function getUpcomingMovies() {
+  return fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=b3a72b722e11795c7179cc928980a9e2').then(function (res) {
+    return res.json();
+  }).then(function (json) {
+    return json.results;
+  });
+};
+
+exports.getUpcomingMovies = getUpcomingMovies;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZpY2UudHMiXSwibmFtZXMiOlsiZ2V0VXBjb21pbmdNb3ZpZXMiLCJmZXRjaCIsInRoZW4iLCJyZXMiLCJqc29uIiwicmVzdWx0cyJdLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBTyxJQUFNQSxpQkFBaUIsR0FBRyxTQUFwQkEsaUJBQW9CO0FBQUEsU0FDL0JDLEtBQUssQ0FDSCxzRkFERyxDQUFMLENBR0dDLElBSEgsQ0FHUSxVQUFBQyxHQUFHO0FBQUEsV0FBSUEsR0FBRyxDQUFDQyxJQUFKLEVBQUo7QUFBQSxHQUhYLEVBSUdGLElBSkgsQ0FJUSxVQUFBRSxJQUFJO0FBQUEsV0FBSUEsSUFBSSxDQUFDQyxPQUFUO0FBQUEsR0FKWixDQUQrQjtBQUFBLENBQTFCIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IGdldFVwY29taW5nTW92aWVzID0gKCkgPT5cbiAgZmV0Y2goXG4gICAgJ2h0dHBzOi8vYXBpLnRoZW1vdmllZGIub3JnLzMvbW92aWUvdXBjb21pbmc/YXBpX2tleT1iM2E3MmI3MjJlMTE3OTVjNzE3OWNjOTI4OTgwYTllMicsXG4gIClcbiAgICAudGhlbihyZXMgPT4gcmVzLmpzb24oKSlcbiAgICAudGhlbihqc29uID0+IGpzb24ucmVzdWx0cyk7XG4iXX0=

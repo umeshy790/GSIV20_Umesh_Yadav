@@ -1,0 +1,26 @@
+c6152899e7d623eebfa9c96cdc920488
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getMovieDetails = exports.getUpcomingMovies = void 0;
+
+var getUpcomingMovies = function getUpcomingMovies() {
+  return fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=b3a72b722e11795c7179cc928980a9e2').then(function (res) {
+    return res.json();
+  }).then(function (json) {
+    return json.results;
+  });
+};
+
+exports.getUpcomingMovies = getUpcomingMovies;
+
+var getMovieDetails = function getMovieDetails(id) {
+  return fetch("https://api.themoviedb.org/3/movie/" + id + "?api_key=b3a72b722e11795c7179cc928980a9e2").then(function (res) {
+    return res.json();
+  }).then(function (json) {
+    return json;
+  });
+};
+
+exports.getMovieDetails = getMovieDetails;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZpY2UudHMiXSwibmFtZXMiOlsiZ2V0VXBjb21pbmdNb3ZpZXMiLCJmZXRjaCIsInRoZW4iLCJyZXMiLCJqc29uIiwicmVzdWx0cyIsImdldE1vdmllRGV0YWlscyIsImlkIl0sIm1hcHBpbmdzIjoiOzs7OztBQUFPLElBQU1BLGlCQUFpQixHQUFHLFNBQXBCQSxpQkFBb0I7QUFBQSxTQUMvQkMsS0FBSyxDQUNILHNGQURHLENBQUwsQ0FHR0MsSUFISCxDQUdRLFVBQUFDLEdBQUc7QUFBQSxXQUFJQSxHQUFHLENBQUNDLElBQUosRUFBSjtBQUFBLEdBSFgsRUFJR0YsSUFKSCxDQUlRLFVBQUFFLElBQUk7QUFBQSxXQUFJQSxJQUFJLENBQUNDLE9BQVQ7QUFBQSxHQUpaLENBRCtCO0FBQUEsQ0FBMUI7Ozs7QUFPQSxJQUFNQyxlQUFlLEdBQUcsU0FBbEJBLGVBQWtCLENBQUNDLEVBQUQ7QUFBQSxTQUM3Qk4sS0FBSyx5Q0FDbUNNLEVBRG5DLCtDQUFMLENBR0dMLElBSEgsQ0FHUSxVQUFBQyxHQUFHO0FBQUEsV0FBSUEsR0FBRyxDQUFDQyxJQUFKLEVBQUo7QUFBQSxHQUhYLEVBSUdGLElBSkgsQ0FJUSxVQUFBRSxJQUFJO0FBQUEsV0FBSUEsSUFBSjtBQUFBLEdBSlosQ0FENkI7QUFBQSxDQUF4QiIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBnZXRVcGNvbWluZ01vdmllcyA9ICgpID0+XG4gIGZldGNoKFxuICAgICdodHRwczovL2FwaS50aGVtb3ZpZWRiLm9yZy8zL21vdmllL3VwY29taW5nP2FwaV9rZXk9YjNhNzJiNzIyZTExNzk1YzcxNzljYzkyODk4MGE5ZTInLFxuICApXG4gICAgLnRoZW4ocmVzID0+IHJlcy5qc29uKCkpXG4gICAgLnRoZW4oanNvbiA9PiBqc29uLnJlc3VsdHMpO1xuXG5leHBvcnQgY29uc3QgZ2V0TW92aWVEZXRhaWxzID0gKGlkOiBudW1iZXIpID0+XG4gIGZldGNoKFxuICAgIGBodHRwczovL2FwaS50aGVtb3ZpZWRiLm9yZy8zL21vdmllLyR7aWR9P2FwaV9rZXk9YjNhNzJiNzIyZTExNzk1YzcxNzljYzkyODk4MGE5ZTJgLFxuICApXG4gICAgLnRoZW4ocmVzID0+IHJlcy5qc29uKCkpXG4gICAgLnRoZW4oanNvbiA9PiBqc29uKTtcbiJdfQ==

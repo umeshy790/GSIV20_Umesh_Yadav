@@ -13,4 +13,5 @@ export interface Movie {
   vote_average: number;
   overview: number;
   release_date: number;
+  runtime?: number;
 }
