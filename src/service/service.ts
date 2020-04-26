@@ -1,10 +1,12 @@
 const BASE_URL = 'https://api.themoviedb.org/3';
 const key = 'b3a72b722e11795c7179cc928980a9e2';
 
-let controller = new AbortController();
+const AbortController = window.AbortController;
+
 let isRequestPending: boolean = false;
 
 export function fetchMovies(page: number, query: string) {
+  let controller = new AbortController();
   const upcomingMoviespath = `${BASE_URL}/movie/upcoming?api_key=${key}&page=${page}`;
   const searchMoviePath = `${BASE_URL}/search/movie?api_key=${key}&query=${encodeURIComponent(
     query,
@@ -12,7 +14,7 @@ export function fetchMovies(page: number, query: string) {
 
   if (isRequestPending) {
     controller.abort();
-    controller = new AbortController();
+    // controller = new AbortController();
   }
   isRequestPending = true;
 
@@ -34,26 +36,3 @@ export const getMovieDetails = (id: number) =>
   fetch(`${BASE_URL}/movie/${id}?api_key=${key}`)
     .then(res => res.json())
     .then(json => json);
-
-// export const searchMovies = async (query: string, page: number) => {
-//   if (isRequestPending) {
-//     controller.abort();
-//   }
-//   try {
-//     isRequestPending = true;
-//     const res = await fetch(
-//       `${BASE_URL}/search/movie?api_key=${key}&query=${encodeURIComponent(
-//         query,
-//       )}&page=${page}`,
-//       {
-//         signal: controller.signal,
-//       },
-//     );
-//     const json = await res.json();
-//     isRequestPending = false;
-//     return json.results;
-//   } catch (err) {
-//     isRequestPending = false;u
-//     console.log(err);
-//   }
-// };

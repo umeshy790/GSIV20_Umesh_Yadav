@@ -33,12 +33,12 @@ const UpcomingMovies: React.FC = () => {
     /**
      * can be improvise but bear with me .
      */
+    if (timeOut) {
+      clearTimeout(timeOut);
+    }
     if (!query) {
       dispatch(fetchUpcomingMovies(page, query));
     } else {
-      if (timeOut) {
-        clearTimeout(timeOut);
-      }
       timeOut = setTimeout(() => {
         dispatch(fetchUpcomingMovies(page, query));
       }, 500);
