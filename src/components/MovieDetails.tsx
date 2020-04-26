@@ -6,6 +6,10 @@ import { formateDate } from '../utils';
 
 const selectState = (state: RootState) => state.movieDetailReducer;
 
+/**
+ * no director name and actors name in detail json response so i just dummy them .
+ */
+
 const MovieDetails = () => {
   const { error, loading, movie } = useSelector(selectState);
 

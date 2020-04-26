@@ -24,14 +24,17 @@ describe('async actions', () => {
       });
 
       const expectedActions = [
-        {type: REQUEST_UPCOMING_MOVIES_ACTION},
-        {type: REQUEST_UPCOMING_MOVIES_SUCCESS_ACTION, data: []},
+        {type: REQUEST_UPCOMING_MOVIES_ACTION, page: 1},
+        {
+          type: REQUEST_UPCOMING_MOVIES_SUCCESS_ACTION,
+          payload: {data: [], isFetchedMore: false},
+        },
       ];
 
       const store = mockStore({});
 
       return store
-        .dispatch(fetchUpcomingMovies())
+        .dispatch(fetchUpcomingMovies(1))
         .then(() => expect(store.getActions()).toEqual(expectedActions));
     });
   });

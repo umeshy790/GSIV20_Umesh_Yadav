@@ -4,13 +4,16 @@ import {Movie} from '../modal/modals';
 
 interface Prop {
   movie: Movie,
-  handlePress : () => {}
+  handlePress : any
 }
 
 const MovieCard = (props: Prop) => {
   const { movie, handlePress } = props;
+
+  const _handlePress = () => handlePress(movie)
+
   return (
-    <TouchableWithoutFeedback style={{flex: 1}} onPress={handlePress}>
+    <TouchableWithoutFeedback style={{flex: 1}} onPress={_handlePress}>
       <View style={styles.container}>
         <View style={styles.body}>
           <Image

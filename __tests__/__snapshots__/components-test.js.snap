@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component tests Movie Card Test shoul match to snapShot 1`] = `
+exports[`Component tests Movie Card Test should match to snapShot 1`] = `
 <View
   accessible={true}
   focusable={false}
@@ -27,6 +27,7 @@ exports[`Component tests Movie Card Test shoul match to snapShot 1`] = `
         "elevation": 6,
         "flex": 1,
         "height": 290,
+        "maxWidth": 180,
         "shadowColor": "#000",
         "shadowOffset": Object {
           "height": 3,

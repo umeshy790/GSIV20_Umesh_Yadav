@@ -17,18 +17,33 @@ import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const selectState = (state: RootState) => state.movieListReducer;
+let timeOut: any;
 
 const UpcomingMovies: React.FC = () => {
   const {loading, error, movies} = useSelector(selectState);
+  const [state, setState] = useState({
+    page: 1,
+    query: '',
+  });
   const dispatch = useDispatch();
-  const [page, setPage] = useState(1);
-  const [search, setSearch] = useState('');
-
   const navigation = useNavigation();
 
   useEffect(() => {
-    dispatch(fetchUpcomingMovies(page));
-  }, [dispatch, page]);
+    const {page, query} = state;
+    /**
+     * can be improvise but bear with me .
+     */
+    if (!query) {
+      dispatch(fetchUpcomingMovies(page, query));
+    } else {
+      if (timeOut) {
+        clearTimeout(timeOut);
+      }
+      timeOut = setTimeout(() => {
+        dispatch(fetchUpcomingMovies(page, query));
+      }, 500);
+    }
+  }, [dispatch, state]);
 
   const handlePress = (movie: Movie): void => {
     dispatch(fetchMovieDetails(movie.id));
@@ -36,37 +51,10 @@ const UpcomingMovies: React.FC = () => {
   };
 
   const handleOnReachedEnd = (): void => {
-    const _page = page + 1;
-    setPage(_page);
+    setState({...state, page: state.page + 1});
   };
 
-  const handleChange = (txt: string) => setSearch(txt);
-
-  if (loading) {
-    return (
-      <View
-        style={{
-          ...styles.container,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <ActivityIndicator size="large" />
-      </View>
-    );
-  }
-
-  if (error) {
-    return (
-      <View
-        style={{
-          ...styles.container,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <Text>{error}</Text>
-      </View>
-    );
-  }
+  const handleChange = (txt: string) => setState({page: 1, query: txt});
 
   return (
     <View style={styles.container}>
@@ -76,23 +64,43 @@ const UpcomingMovies: React.FC = () => {
           <TextInput
             style={styles.inputText}
             placeholder="Search"
-            value={search}
+            value={state.query}
             onChangeText={handleChange}
           />
         </View>
       </View>
-      <FlatList<Movie>
-        data={movies.filter(movie =>
-          movie.title.toLowerCase().match(search.toLowerCase()),
+      <View style={{flex: 1}}>
+        {loading ? (
+          <View
+            style={{
+              ...styles.container,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <ActivityIndicator size="large" />
+          </View>
+        ) : error ? (
+          <View
+            style={{
+              ...styles.container,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <Text>{error}</Text>
+          </View>
+        ) : (
+          <FlatList<Movie>
+            data={movies}
+            numColumns={2}
+            renderItem={({item}) => (
+              <MovieCard movie={item} handlePress={handlePress} />
+            )}
+            keyExtractor={item => item.id.toString()}
+            onEndReachedThreshold={0.8}
+            onEndReached={handleOnReachedEnd}
+          />
         )}
-        numColumns={2}
-        renderItem={({item}) => (
-          <MovieCard movie={item} handlePress={(): void => handlePress(item)} />
-        )}
-        keyExtractor={item => item.id.toString()}
-        onEndReachedThreshold={0.5}
-        onEndReached={handleOnReachedEnd}
-      />
+      </View>
     </View>
   );
 };

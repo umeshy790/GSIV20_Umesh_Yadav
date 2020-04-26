@@ -33,7 +33,7 @@ interface RequestUpcomingMoviesSuccessAction {
   type: typeof REQUEST_UPCOMING_MOVIES_SUCCESS_ACTION;
   payload: {
     data: Movie[];
-    isFetchedMore: boolean;
+    isFetchedMore?: boolean;
   };
 }
 

@@ -25,10 +25,12 @@ describe('actions', () => {
     const id: number = 1212;
 
     describe('request movie action', () => {
+      const page = 1;
       const requestUpcomingMovieAction = {
         type: types.REQUEST_UPCOMING_MOVIES_ACTION,
+        page: page,
       };
-      expect(actions.requestUpcomingMoviesAction()).toEqual(
+      expect(actions.requestUpcomingMoviesAction(page)).toEqual(
         requestUpcomingMovieAction,
       );
     });
@@ -36,11 +38,17 @@ describe('actions', () => {
     describe('request movie success action', () => {
       const requestUpcomingMovieSuccessAction = {
         type: types.REQUEST_UPCOMING_MOVIES_SUCCESS_ACTION,
-        data: movies,
+        payload: {
+          data: movies,
+          isFetchedMore: false,
+        },
       };
-      expect(actions.requestUpcomingMoviesSuccessAction(movies)).toEqual(
-        requestUpcomingMovieSuccessAction,
-      );
+      expect(
+        actions.requestUpcomingMoviesSuccessAction({
+          data: movies,
+          isFetchedMore: false,
+        }),
+      ).toEqual(requestUpcomingMovieSuccessAction);
     });
 
     describe('request movie failed action', () => {
