@@ -13,4 +13,8 @@ react-native run-android Or react-native run-ios
 
 you can find snaps here .
 
+https://user-images.githubusercontent.com/25456972/80306332-5feccd00-87e0-11ea-81a7-20a1ae48360e.png
+
+https://user-images.githubusercontent.com/25456972/80306343-7135d980-87e0-11ea-8649-e9be937f784c.png
+
 https://user-images.githubusercontent.com/25456972/80306272-d50bd280-87df-11ea-9a11-6e761f23625a.png
