@@ -6,7 +6,7 @@ Please make sure jdk path is configured according your enviroments .
 To run basic jest based test run :
 yarn test or npm test
 
-statr dev server : yarn start | npm statr
+statr dev server : yarn start | npm start
 
 To test on android or ios run :
 react-native run-android Or react-native run-ios
