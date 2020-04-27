@@ -1,12 +1,14 @@
 const BASE_URL = 'https://api.themoviedb.org/3';
 const key = 'b3a72b722e11795c7179cc928980a9e2';
 
+import 'abortcontroller-polyfill';
+
 const AbortController = window.AbortController;
+let controller = new AbortController();
 
 let isRequestPending: boolean = false;
 
 export function fetchMovies(page: number, query: string) {
-  let controller = new AbortController();
   const upcomingMoviespath = `${BASE_URL}/movie/upcoming?api_key=${key}&page=${page}`;
   const searchMoviePath = `${BASE_URL}/search/movie?api_key=${key}&query=${encodeURIComponent(
     query,
@@ -14,7 +16,7 @@ export function fetchMovies(page: number, query: string) {
 
   if (isRequestPending) {
     controller.abort();
-    // controller = new AbortController();
+    controller = new AbortController();
   }
   isRequestPending = true;
 
